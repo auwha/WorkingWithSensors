@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/light_sensor_item"
+        android:icon="@drawable/baseline_light_mode_24"
+        android:title="Light" />
+
+    <item android:id="@+id/accelerometer_sensor_item"
+        android:icon="@drawable/baseline_speed_24"
+        android:title="Accelerometer" />
+</menu>

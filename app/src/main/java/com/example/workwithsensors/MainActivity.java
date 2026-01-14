@@ -3,14 +3,11 @@ package com.example.workwithsensors;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,8 +15,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.workwithsensors.databinding.ActivityLightSensorBinding;
 import com.example.workwithsensors.databinding.ActivityMainBinding;
+import com.example.workwithsensors.sensors.AccelerometerSensor;
+import com.example.workwithsensors.sensors.LightSensor;
+import com.google.android.material.navigationrail.NavigationRailView;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "Mar";
     ActivityMainBinding b;
     SensorManager sensorManager;
+    boolean isMenuExpanded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,17 +55,34 @@ public class MainActivity extends AppCompatActivity {
         checkSensorMagnetic();
         listSensorGravity();
 
-        b.lightSensor.setOnClickListener(v -> {
-            Intent intent = new Intent(this, LightSensorActivity.class);
-//            intent.putExtra("type", Sensor.TYPE_LIGHT);
-            startActivity(intent);
+        ImageButton btn = b.navigationView.getHeaderView().findViewById(R.id.menu_btn);
+        btn.setOnClickListener(v -> {
+            isMenuExpanded = !isMenuExpanded;
+            b.navigationView.setLabelVisibilityMode(isMenuExpanded ? NavigationRailView.LABEL_VISIBILITY_UNLABELED : NavigationRailView.LABEL_VISIBILITY_LABELED);
         });
 
-        b.accelerometerSensor.setOnClickListener(v -> {
-            Intent intent = new Intent(this, AccelerometerSensor.class);
-//            intent.putExtra("type", Sensor.TYPE_LIGHT);
-            startActivity(intent);
+        b.navigationView.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.light_sensor_item) {
+                Intent intent = new Intent(getApplicationContext(), LightSensor.class);
+                startActivity(intent);
+            } else if (item.getItemId() == R.id.accelerometer_sensor_item) {
+                Intent intent = new Intent(getApplicationContext(), AccelerometerSensor.class);
+                startActivity(intent);
+            }
+            return false;
         });
+
+//        b.lightSensor.setOnClickListener(v -> {
+//            Intent intent = new Intent(this, LightSensorActivity.class);
+////            intent.putExtra("type", Sensor.TYPE_LIGHT);
+//            startActivity(intent);
+//        });
+//
+//        b.accelerometerSensor.setOnClickListener(v -> {
+//            Intent intent = new Intent(this, AccelerometerSensor.class);
+////            intent.putExtra("type", Sensor.TYPE_LIGHT);
+//            startActivity(intent);
+//        });
     }
 
     private void checkSensorMagnetic() {
