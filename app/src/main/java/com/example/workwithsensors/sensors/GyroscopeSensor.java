@@ -13,7 +13,7 @@ public class GyroscopeSensor extends BaseSensorActivity {
 
     @Override
     public void updateData(float[] values) {
-        String data = String.format(Locale.getDefault(),
+        String data = String.format(
                 "X: %.2f rad/s\nY: %.2f rad/s\nZ: %.2f rad/s",
                 values[0], values[1], values[2]);
 

@@ -7,15 +7,11 @@ import android.os.Bundle;
 
 import com.example.workwithsensors.BaseSensorActivity;
 
-import java.util.Locale;
-
 public class OrientationSensor extends BaseSensorActivity {
 
-    // Tablice do przechowywania surowych danych
     private float[] accelerometerReading = new float[3];
     private float[] magnetometerReading = new float[3];
 
-    // Macierze do obliczeń matematycznych
     private final float[] rotationMatrix = new float[9];
     private final float[] orientationAngles = new float[3];
 

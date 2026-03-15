@@ -13,7 +13,7 @@ public class MagneticSensor extends BaseSensorActivity {
 
     @Override
     public void updateData(float[] values) {
-        String data = String.format(Locale.getDefault(),
+        String data = String.format(
                 "X: %.2f µT\nY: %.2f µT\nZ: %.2f µT",
                 values[0], values[1], values[2]);
 

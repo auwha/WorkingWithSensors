@@ -15,7 +15,7 @@ public class ProximitySensor extends BaseSensorActivity {
     public void updateData(float[] values) {
         float distance = values[0];
 
-        String data = String.format(Locale.getDefault(), "Dystans: %.2f cm", distance);
+        String data = String.format("Dystans: %.2f cm", distance);
         b.textReadings.setText(data);
     }
 }

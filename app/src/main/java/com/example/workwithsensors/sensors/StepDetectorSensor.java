@@ -18,9 +18,7 @@ public class StepDetectorSensor extends BaseSensorActivity {
             stepsInSession++;
         }
 
-        String data = "Wykryto krok w tej sesji!\n\n" +
-                "Suma kroków: " + stepsInSession + "\n\n" +
-                "(Potrząśnij telefonem lub przejdź się,\naby przetestować)";
+        String data = "Wykryto krok: " + stepsInSession + " kroków";
 
         b.textReadings.setText(data);
     }
