@@ -7,4 +7,36 @@
     <item android:id="@+id/accelerometer_sensor_item"
         android:icon="@drawable/baseline_speed_24"
         android:title="Accelerometer" />
+
+    <item android:id="@+id/orientation_sensor_item"
+        android:icon="@drawable/outline_aspect_ratio_24"
+        android:title="Orientation" />
+
+    <item android:id="@+id/gravity_sensor_item"
+        android:icon="@drawable/round_gradient_24"
+        android:title="Gravity" />
+
+    <item android:id="@+id/gyroscope_sensor_item"
+        android:icon="@drawable/round_360_24"
+        android:title="Gyroscope" />
+
+    <item android:id="@+id/magnetic_sensor_item"
+        android:icon="@drawable/round_microwave_24"
+        android:title="Magnetic Field" />
+
+    <item android:id="@+id/linear_accelerometer_item"
+        android:icon="@drawable/round_compare_arrows_24"
+        android:title="Linear Accelerometer" />
+
+    <item android:id="@+id/proximity_sensor_item"
+        android:icon="@drawable/baseline_speed_24"
+        android:title="Proximity" />
+
+    <item android:id="@+id/step_detector_item"
+        android:icon="@drawable/round_pedal_bike_24"
+        android:title="Step Detector" />
+
+    <item android:id="@+id/significant_motion_item"
+        android:icon="@drawable/round_horizontal_distribute_24"
+        android:title="Significant Motion" />
 </menu>

@@ -22,9 +22,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.workwithsensors.databinding.ActivityBaseSensorBinding;
 
 public abstract class BaseSensorActivity extends AppCompatActivity implements SensorEventListener {
-    ActivityBaseSensorBinding b;
-    private SensorManager sensorManager;
-    private Sensor sensor;
+    public ActivityBaseSensorBinding b;
+    protected SensorManager sensorManager;
+    protected Sensor sensor;
     boolean isSensorPresent;
 
     @Override
@@ -40,6 +40,9 @@ public abstract class BaseSensorActivity extends AppCompatActivity implements Se
             return insets;
         });
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        setSupportActionBar(b.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(getSensorType());

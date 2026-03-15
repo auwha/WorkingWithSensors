@@ -17,6 +17,38 @@
         android:theme="@style/Theme.WorkWithSensors"
         tools:targetApi="31">
         <activity
+            android:name=".sensors.SignificantMotionSensor"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sensors.StepDetectorSensor"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sensors.ProximitySensor"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sensors.LinearAccelerometerSensor"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sensors.MagneticSensor"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sensors.GyroscopeSensor"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sensors.GravitySensor"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sensors.OrientationSensor"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".sensors.AccelerometerSensor"
             android:parentActivityName=".MainActivity"
             android:exported="false" />

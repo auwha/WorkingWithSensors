@@ -1,21 +1,21 @@
 package com.example.workwithsensors.sensors;
 
 import android.hardware.Sensor;
-
 import com.example.workwithsensors.BaseSensorActivity;
+import java.util.Locale;
 
-public class LightSensor extends BaseSensorActivity {
+public class MagneticSensor extends BaseSensorActivity {
 
     @Override
     public int getSensorType() {
-        return Sensor.TYPE_LIGHT;
+        return Sensor.TYPE_MAGNETIC_FIELD;
     }
 
     @Override
     public void updateData(float[] values) {
-        float lux = values[0];
-
-        String data = String.format("%.2f lx", lux);
+        String data = String.format(Locale.getDefault(),
+                "X: %.2f µT\nY: %.2f µT\nZ: %.2f µT",
+                values[0], values[1], values[2]);
 
         b.textReadings.setText(data);
     }
